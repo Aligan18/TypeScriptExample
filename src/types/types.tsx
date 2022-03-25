@@ -12,11 +12,16 @@ export interface IUser {
     username : string;
     email : string;
     address : IAdress;
-}
+}   
 export interface ITodo {
     userId: number;
-    id: number ;
+    id: string; 
     title: string;
-    complete: boolean;
+    completed:boolean ;
     
+}
+
+export interface ISlide {
+    img : string;
+    title: string;
 }

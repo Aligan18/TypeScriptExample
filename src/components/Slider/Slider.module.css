@@ -1,0 +1,27 @@
+.wrapper{
+    display: flex;
+    width: 100vw;
+    height: 30vh;
+    overflow: hidden;
+   
+}
+
+.button_left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    
+}   
+.img{
+   
+    width: inherit;
+    height: 100%;
+}
+.slide{
+    
+    
+    width: inherit;
+    height: 100%;
+}

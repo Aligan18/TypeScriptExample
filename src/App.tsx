@@ -1,10 +1,10 @@
 import axios from 'axios'
-import React, { useEffect ,useState } from 'react'
+import  { useEffect ,useState } from 'react'
 import List from './generics/List'
 import { ITodo, IUser } from './types/types'
 import User from './components/User'
 import Todo from './components/Todo'
-
+import Home from './page/Home'
 const App = () => {
   const [users , setUsers] = useState<IUser[]>([])
   const [todos , setTodos] = useState<ITodo[]>([])
@@ -13,6 +13,7 @@ const App = () => {
       const res = await axios.get<IUser[]>("https://jsonplaceholder.typicode.com/users")
       setUsers(res.data)
     } catch (error) {
+
       console.log(error)
     }
       
@@ -21,9 +22,10 @@ const App = () => {
   const fetchTodo  = async()=>{
     try {
       const res = await axios.get<ITodo[]>("https://jsonplaceholder.typicode.com/todos?_limit=10")
+      console.log(res.data)
     setTodos(res.data)
-      
-    } catch (error) {
+    
+  } catch (error) {
       console.log(error)
     }
     
@@ -34,13 +36,12 @@ const App = () => {
     fetchUsers()
     fetchTodo()
   },[])
-  
 
+  
 
   return (
   <div>
-    <List array={users} renderItem={(user:IUser)=><User user={user}/>}/>
-    <List array={todos} renderItem={(todo:ITodo)=><Todo todo={todo}/>}/>
+      <Home />
   </div>
   )
 }

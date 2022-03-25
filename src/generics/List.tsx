@@ -1,5 +1,5 @@
-import React, { FC } from 'react'
-import {IUser} from '../types/types'
+import React from 'react'
+
 
 interface IListProps<T>{
     array: T[] ;
