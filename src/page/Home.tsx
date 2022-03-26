@@ -1,6 +1,9 @@
 import React,{FC} from 'react'
-import Slider from '../components/Slider/Slider'
+import OneSlide from '../components/OneSlide/OneSlide'
+
 import { ISlide } from '../types/types'
+import classes from './Home.module.css'
+import SliderWrapper from '../components/SliderWrapper/SliderWrapper'
 
 const Home:FC = () => {
 
@@ -25,7 +28,8 @@ const Home:FC = () => {
 
   return (
     <div>
-        <Slider sliders={sliders} />
+        <SliderWrapper slideSize={60} sliders={sliders}/>
+        
     </div>
     
   )
